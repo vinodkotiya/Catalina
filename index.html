@@ -8,6 +8,7 @@
   <title>Catalina Health Consulting</title>
   <meta content="" name="Fairouz Devji">
   <meta content="" name="Nurse Training, Health Consulting, Medical, Healthcare, Healthcare Canada, Health Consultant, Fairouz Devji, Designed by Ekasmin.com, Vancouver Healthcare">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Favicons -->
   <link href="images/logo.png" rel="icon">
@@ -95,6 +96,7 @@
 
         </div>
       </div>
+      <div id="toast"><div id="img"><a href=survey.html target="_blank">Take our survey</a></div><div id="desc"></div></div>
     </div>
   </section><!-- End Hero Section -->
 
@@ -406,7 +408,7 @@
 
       </div>
     </section><!-- End Recent Blog Posts Section -->
-
+   
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -489,7 +491,112 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <style>
+   #toast {
+    visibility: hidden;
+    max-width: 250px;
+    height: 50px;
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
 
+    position: fixed;
+    z-index: 1;
+    left: 0;right:0;
+    bottom: 30px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+#toast #img{
+	width: 250px;
+	height: 50px;
+    
+    float: left;
+    
+    padding-top: 16px;
+    padding-bottom: 16px;
+    
+    box-sizing: border-box;
+
+    
+    background-color: #111;
+    color: #fff;
+}
+#toast #desc{
+
+    
+    color: #fff;
+   
+    padding: 16px;
+    
+    overflow: hidden;
+	white-space: nowrap;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes expand {
+    from {min-width: 50px} 
+    to {min-width: 350px}
+}
+
+@keyframes expand {
+    from {min-width: 50px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes stay {
+    from {min-width: 350px} 
+    to {min-width: 350px}
+}
+
+@keyframes stay {
+    from {min-width: 350px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes shrink {
+    from {min-width: 350px;} 
+    to {min-width: 50px;}
+}
+
+@keyframes shrink {
+    from {min-width: 350px;} 
+    to {min-width: 50px;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 60px; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 60px; opacity: 0;}
+}
+  </style>
+<script>
+  $(document).ready(function() {
+    var x = $("#toast");
+    x.addClass("show");
+    setTimeout(function() { x.removeClass("show"); }, 55000);
+  });
+</script>
 </body>
 
 </html>
